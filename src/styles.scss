@@ -1,0 +1,23 @@
+body {
+  padding-left: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 10px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    :checked + label {
+      text-decoration: line-through;
+    }
+
+    button {
+      margin-left: 20px;
+    }
+  }
+}
+
