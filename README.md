@@ -1,40 +1,37 @@
 # front-end testing kata (Angular edition)
 
-## 🥋 Kata (1/3)
+## 🥋 Kata (3/3)
 
-In the source code you will find a very basic TODO application which was built by following these requirements:
+Now, let's see how resilient your tests are to the changes of implementation details.  
+Run your tests:
 
-- a user can add a non empty task:
-  - Enter key submits the form inside input field;
-  - input field is cleared and remains in focus upon adding a task;
-- a user can mark a task as completed or uncompleted;
-- a user can delete any existing task;
-- all tasks are stored and retrieved from the user's local storage.
+```sh
+npm test
+```
 
-You can inspect the app by running `npm start`. Don't forget to install dependencies (`npm i`) before that!
+Are they still passing? If not, then it's very likely your tests are tied up with the implementation details which should be **avoided**.  
+Try to self-assess how much time you would have to spend fixing those failing tests.
 
-### 📎 Task
+### Why does this matter?
 
-Your task is to write tests for this application as you would normally write them.  
-There is only one rule - you **cannot** change any bit of the implementation but you can add as many test related changes (`spec.ts` files, mocking libraries, etc.) as you would like.
+You want to write maintainable tests for your Angular components. As a part of this goal, you want your tests to avoid including implementation details of your components and rather focus on making your tests give you the confidence for which they are intended. As part of this, you want your test base to be maintainable in the long run so refactors of your components (changes to implementation but not functionality) don't break your tests and slow you and your team down ([ref](https://testing-library.com/docs/angular-testing-library/intro#the-problem)).
 
-Jest is ready to serve your tests with `npm test` command.
+More on this:
 
-When you feel confident about your tests enough - come back here.  
-Now, [sHoW mE wHaT yOu gOt!](https://www.youtube.com/watch?v=m1fZ7Ap6ebs)
+- https://kentcdodds.com/blog/testing-implementation-details
+- https://testing-library.com/docs/guiding-principles
+- https://testing-library.com/docs/angular-testing-library/intro#the-problem
 
 ### 🏁 Finish
 
-Finished writing your tests? Good, let's jump to another git branch!  
-Keep your changes in the working directory (do not stash, commit or discard).  
-Don't worry - you won't loose any changes by running the following command.
+We're near the finish. One more branch to go:
 
 ```sh
-git checkout origin/2-kata
+git checkout origin/4-the-end
 ```
 
 ## 🔙 Want to go back?
 
 ```sh
-git checkout 0-the-beginning
+git checkout origin/2-kata
 ```
