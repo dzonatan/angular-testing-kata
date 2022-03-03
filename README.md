@@ -1,40 +1,52 @@
 # front-end testing kata (Angular edition)
 
-## 🥋 Kata (1/3)
+## 🥋 Kata (2/3)
 
-In the source code you will find a very basic TODO application which was built by following these requirements:
+It's testing time!  
+The app was given some random bugs that no longer satisfy the requirements.  
+Will your tests going to catch them? Let's find out:
 
-- a user can add a non empty task:
-  - Enter key submits the form inside input field;
-  - input field is cleared and remains in focus upon adding a task;
-- a user can mark a task as completed or uncompleted;
-- a user can delete any existing task;
-- all tasks are stored and retrieved from the user's local storage.
+```sh
+npm test
+```
 
-You can inspect the app by running `npm start`. Don't forget to install dependencies (`npm i`) before that!
+Can you easily tell what's broken without reading further?
 
-### 📎 Task
+<details>
+  <summary>There are six bugs (expand me to see):</summary>
 
-Your task is to write tests for this application as you would normally write them.  
-There is only one rule - you **cannot** change any bit of the implementation but you can add as many test related changes (`spec.ts` files, mocking libraries, etc.) as you would like.
+- the input field does not prevent adding an empty task anymore;
+- the input field is no longer cleared upon add;
+- the input field is no longer focused upon add;
+- Enter key inside the input no longer submits the form;
+- the task deletion no longer deletes the exact task that was selected;
+- marking a task as completed/uncompleted no longer saves the changes into a local storage;
 
-Jest is ready to serve your tests with `npm test` command.
+</details>
 
-When you feel confident about your tests enough - come back here.  
-Now, [sHoW mE wHaT yOu gOt!](https://www.youtube.com/watch?v=m1fZ7Ap6ebs)
+Did your tests caught all of them? Was it easy to tell what's broken?
+
+### Why does this matter?
+
+"The more your tests resemble the way your software is used, the more confidence they can give you." [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106)
+
+More on this:
+
+- https://kentcdodds.com/blog/write-tests
+- https://testing-library.com/docs/guiding-principles/
 
 ### 🏁 Finish
 
-Finished writing your tests? Good, let's jump to another git branch!  
-Keep your changes in the working directory (do not stash, commit or discard).  
-Don't worry - you won't loose any changes by running the following command.
+All right, let's give your tests another shot by switching to another branch.  
+As before - keep your changes in the working directory (do not stash, commit or discard).  
+Also, you do **not** need to fix the failing tests, keep them as is.
 
 ```sh
-git checkout origin/2-kata
+git checkout origin/3-kata
 ```
 
 ## 🔙 Want to go back?
 
 ```sh
-git checkout 0-the-beginning
+git checkout origin/1-kata
 ```
