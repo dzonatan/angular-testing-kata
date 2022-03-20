@@ -25,7 +25,7 @@
   </li>
 </ul>
 
-<form #form="ngForm" (ngSubmit)="onSubmit(form)" [noValidate]="false">
+<form #form="ngForm" [noValidate]="false">
   <input
     #taskInputRef
     type="text"
@@ -34,7 +34,6 @@
     placeholder="E.g. buy some milk"
     aria-label="Write a new todo item"
     autocomplete="off"
-    required
   />
-  <button type="submit">Add</button>
+  <button type="button" (click)="onSubmit(form)">Add</button>
 </form>

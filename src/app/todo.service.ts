@@ -25,14 +25,13 @@ export class TodoService {
   }
 
   remove(index: number): void {
-    this.todoList = this.todoList.filter((_, i) => i !== index);
+    this.todoList = this.todoList.filter((_, i) => i !== index - 1);
     this.save();
   }
 
   toggle(index: number, status: boolean): void {
     const todoItem = this.todoList.find((_, i) => i === index);
     todoItem!.done = status;
-    this.save();
   }
 
   private load(): void {

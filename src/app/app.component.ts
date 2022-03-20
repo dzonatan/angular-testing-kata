@@ -18,8 +18,5 @@ export class AppComponent {
 
     const { newTask } = form.value;
     this.todoService.add(newTask);
-
-    form.resetForm({ newTask: '' });
-    this.taskInputRef.nativeElement.focus();
   }
 }
