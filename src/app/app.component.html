@@ -1,16 +1,16 @@
 <h1 id="todos-heading">My TODO list</h1>
 
-<p *ngIf="!todoService.todoList.length">
+<p *ngIf="!todoList.length">
   <i>Hurray! You have nothing to do.</i>
 </p>
 
 <ul aria-labelledby="todos-heading">
-  <li *ngFor="let todoItem of todoService.todoList; index as i">
+  <li *ngFor="let todoItem of todoList; index as i">
     <input
       [id]="'task' + i"
       type="checkbox"
       [checked]="todoItem.done"
-      (change)="todoService.toggle(i, $any($event.target).checked)"
+      (change)="toggle(i, $any($event.target).checked)"
     />
 
     <label [attr.for]="'task' + i">{{ todoItem.title }}</label>
@@ -18,19 +18,19 @@
     <button
       type="button"
       [attr.aria-label]="'Remove ' + todoItem.title"
-      (click)="todoService.remove(i)"
+      (click)="remove(i)"
     >
       X
     </button>
   </li>
 </ul>
 
-<form #form="ngForm" (ngSubmit)="onSubmit(form)" [noValidate]="false">
+<form #form="ngForm" (ngSubmit)="add(form)" [noValidate]="false">
   <input
-    #taskInputRef
+    #newTaskInputRef
     type="text"
     name="newTask"
-    ngModel
+    [(ngModel)]="newTask"
     placeholder="E.g. buy some milk"
     aria-label="Write a new todo item"
     autocomplete="off"
